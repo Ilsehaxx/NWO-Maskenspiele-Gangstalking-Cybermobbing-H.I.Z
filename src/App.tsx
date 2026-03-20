@@ -22,7 +22,8 @@ import {
   Crosshair,
   Briefcase,
   Volume2,
-  VolumeX
+  VolumeX,
+  Activity
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -80,6 +81,30 @@ const BackgroundAudio = () => {
 
 const Header = ({ currentView, setCurrentView }: { currentView: string, setCurrentView: (v: string) => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateCount = async () => {
+      try {
+        const hasVisited = localStorage.getItem('nwo_visited');
+        if (!hasVisited) {
+          const res = await fetch('/api/visitor-count/increment', { method: 'POST' });
+          const data = await res.json();
+          setVisitorCount(data.count);
+          localStorage.setItem('nwo_visited', 'true');
+        } else {
+          const res = await fetch('/api/visitor-count');
+          const data = await res.json();
+          setVisitorCount(data.count);
+        }
+      } catch (err) {
+        console.error('Counter API nicht erreichbar');
+        // Fallback: Zeige einen statischen Wert oder 0 an, damit die UI nicht bricht
+        setVisitorCount(0);
+      }
+    };
+    updateCount();
+  }, []);
 
   const navItems = [
     { id: 'home', label: 'Startseite' },
@@ -111,21 +136,29 @@ const Header = ({ currentView, setCurrentView }: { currentView: string, setCurre
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8 items-center">
-            {navItems.map(item => (
-              <button 
-                key={item.id}
-                onClick={() => setCurrentView(item.id)}
-                className={`font-semibold transition-colors ${
-                  currentView === item.id 
-                    ? 'text-red-600 underline decoration-2 underline-offset-4' 
-                    : 'text-gray-600 hover:text-red-600'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-2 bg-gray-100 px-3 py-1 rounded-full border border-gray-200">
+              <Activity size={14} className="text-red-600 animate-pulse" />
+              <span className="text-xs font-mono font-bold text-gray-700">
+                BESUCHER: {visitorCount !== null ? visitorCount.toLocaleString() : '...'}
+              </span>
+            </div>
+            <nav className="flex space-x-8 items-center">
+              {navItems.map(item => (
+                <button 
+                  key={item.id}
+                  onClick={() => setCurrentView(item.id)}
+                  className={`font-semibold transition-colors ${
+                    currentView === item.id 
+                      ? 'text-red-600 underline decoration-2 underline-offset-4' 
+                      : 'text-gray-600 hover:text-red-600'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -226,15 +259,15 @@ const HomeView = () => (
           <h3 className="text-2xl font-bold text-gray-900 mb-6 border-l-4 border-red-600 pl-4">Zentrale Erkenntnisse</h3>
           <div className="space-y-4">
             {[
-              { title: "KI-Identitäten", desc: "Einsatz von AI-Musiker wie H.I.Z. zur systematischen Radikalisierung und Zersetzung." },
-              { title: "Wasserzeichen-Beweise", desc: "Technische Analyse belegt identische Jingle-Signaturen in Produktionen von Mr.Bloxx und H.I.Z." },
-              { title: "Medienmanipulation", desc: "Einsatz von KI-Fotos und Fake-News in Lokalzeitungen (PAZ) zur gezielten Desinformation." },
-              { title: "Technologische Basis", desc: "Mutmaßlicher Einsatz illegal erworbener ILM-Technologie zur Erstellung von Deepfakes." }
+              { title: "KI-Identitäten", desc: "Einsatz von AI-Musiker wie H.I.Z. zur systematischen Radikalisierung und Zersetzung.", link: "https://github.com/mrbloxx/H.I.Z" },
+              { title: "Wasserzeichen-Beweise", desc: "Technische Analyse belegt identische Jingle-Signaturen in Produktionen von Mr.Bloxx und H.I.Z.", link: "https://github.com/kjedrdev/NWO_Das_Cybermobbing_Kartell-Der_Haupttaeter_Beweisstueck" },
+              { title: "Medienmanipulation", desc: "Einsatz von KI-Fotos und Fake-News in Lokalzeitungen (PAZ) zur gezielten Desinformation.", link: "https://github.com/entwicklerkatze87/PAZ-Peiner_Allgemeine_Zeitung-KI-Fotos" },
+              { title: "Technologische Basis", desc: "Mutmaßlicher Einsatz illegal erworbener ILM-Technologie zur Erstellung von Deepfakes.", link: "https://github.com/cybermobbing-untersuchung/Germany-AI-influencers-government" }
             ].map((topic, i) => (
-              <div key={i} className="bg-white p-6 border border-gray-200 hover:border-red-600 transition-colors cursor-pointer group">
+              <a key={i} href={topic.link} target="_blank" rel="noopener noreferrer" className="block bg-white p-6 border border-gray-200 hover:border-red-600 transition-colors group">
                 <h4 className="font-bold text-gray-900 group-hover:underline mb-1">{topic.title}</h4>
                 <p className="text-sm text-gray-600">{topic.desc}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -374,7 +407,8 @@ const NewsView = () => {
       title: "Thomas Deike (Mr.Bloxx)",
       level: "HAUPTTÄTER",
       desc: "Zentraler Kopf des NWO-Cybermobbing-Kartells. Verantwortlich für Koordination, KI-Musikproduktion und gezielte Stalking-Kampagnen. Nutzt technologische Mittel zur Manipulation der Rap-Szene.",
-      connections: "AfD-Strategen, H.I.Z., GRU-Umfeld"
+      connections: "AfD-Strategen, H.I.Z., GRU-Umfeld",
+      link: "https://github.com/mr-bloxx/NWO_Das_Cybermobbing_Kartell-HIZ_und_MrBloxx"
     },
     {
       id: "HIZ-BAND",
@@ -382,7 +416,8 @@ const NewsView = () => {
       title: "H.I.Z. (Hip Hop International Zone)",
       level: "WERKZEUG",
       desc: "KI-generierte Rap-Band (Jennifer Kornau, Julius Falkenhain-Walkling). Dient der Radikalisierung und als Front für Cyber-Angriffe. Identische Audio-Signaturen mit Mr.Bloxx Produktionen.",
-      connections: "Enkime GmbH, Disney ILM Tech"
+      connections: "Enkime GmbH, Disney ILM Tech",
+      link: "https://github.com/conspiracy-uncoverage/H.I.Z-Gangstalking-NWO-Cybermobbing-Spotify"
     },
     {
       id: "T-ROHR",
@@ -390,7 +425,8 @@ const NewsView = () => {
       title: "Tom Rohrböck",
       level: "NETZWERKER",
       desc: "Hintermann für verschiedene KI-Influencer-Projekte wie Naomi Seibt und Erik Ahrens. Nutzt Desinformationsstrategien zur politischen Beeinflussung.",
-      connections: "AfD, TikTok-Operationen"
+      connections: "AfD, TikTok-Operationen",
+      link: "https://github.com/cybermobbing-untersuchung/Erik-Ahrens-TikTok-AfD-Stratege"
     },
     {
       id: "N-SEIBT",
@@ -398,7 +434,8 @@ const NewsView = () => {
       title: "Naomi Seibt / Erik Ahrens",
       level: "FRONT-KI",
       desc: "KI-Deepfakes und manipulierte Persönlichkeiten, die zur Verbreitung von NWO-Narrativen eingesetzt werden. Erstellt mit High-End VFX Technologie.",
-      connections: "Disney/ILM illegal Tech"
+      connections: "Disney/ILM illegal Tech",
+      link: "https://github.com/sigridfuhrenkamp-cyber/Skepsiz-NWO-Cybermobbing-Musiker-Influence"
     }
   ];
 
@@ -418,10 +455,13 @@ const NewsView = () => {
 
       <div className="space-y-8">
         {actors.map((actor, idx) => (
-          <motion.div 
+          <motion.a 
             key={idx}
+            href={actor.link}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.005 }}
-            className="bg-white border border-gray-300 shadow-sm overflow-hidden flex flex-col md:flex-row"
+            className="block bg-white border border-gray-300 shadow-sm overflow-hidden flex flex-col md:flex-row hover:border-red-600 transition-colors"
           >
             <div className="bg-gray-900 text-white p-4 md:w-48 flex flex-col justify-between shrink-0">
               <div>
@@ -449,7 +489,7 @@ const NewsView = () => {
                 <strong>Verbindungen:</strong> {actor.connections}
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </div>
     </motion.div>

@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { 
   Search, 
   Menu, 
@@ -23,7 +24,8 @@ import {
   Briefcase,
   Volume2,
   VolumeX,
-  Activity
+  Activity,
+  BookOpen
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -110,6 +112,7 @@ const Header = ({ currentView, setCurrentView }: { currentView: string, setCurre
     { id: 'home', label: 'Startseite' },
     { id: 'about', label: 'Die Recherche' },
     { id: 'news', label: 'Akteure & Netzwerke' },
+    { id: 'readme', label: 'Dokumentation' },
   ];
 
   return (
@@ -569,6 +572,7 @@ export default function App() {
         {currentView === 'home' && <HomeView key="home" />}
         {currentView === 'about' && <AboutView key="about" />}
         {currentView === 'news' && <NewsView key="news" />}
+        {currentView === 'readme' && <ReadmeView key="readme" />}
       </AnimatePresence>
 
       <Footer />

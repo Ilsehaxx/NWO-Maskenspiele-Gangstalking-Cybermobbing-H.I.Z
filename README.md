@@ -64,7 +64,7 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 - **Aktivitäten**: Musikproduktion für Propaganda-Zwecke
 - **Belege**: Analysen zeigen identische Wasserzeichen in Songs
 
-### Weitere Akteure
+### Weitere Akteure der selben Terrororganisation
 - **ArniTheSavage & Schillah**: GRU KI-Musiker
 - **Tom Rohrböck**: AfD-Stratege, TikTok-Influencer
 - **Naomi Seibt**: GRU AI-Deepfake Influencer

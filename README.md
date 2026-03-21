@@ -35,7 +35,7 @@ Dieses Repository dokumentiert eine gründliche Recherche zu den Aktivitäten de
 
 - **NWO (New World Order)**: Mutmaßliche globale Verschwörung zur Kontrolle durch Eliten
 - **Cybermobbing-Kartell**: Ein Netzwerk von Tätern, die systematische Belästigung via Online-Plattformen betreiben
-- **Mr.Bloxx**: Einflussreiche Figur im deutschen Rap- und Influencer-Umfeld, angeblich GRU-Agent
+- **Mr.Bloxx**: Einflussreiche Figur im deutschen Rap- und Influencer-Umfeld, angeblich Agent
 - **H.I.Z. (Hip Hop International Zone)**: Deutsche Rap-Band, deren Mitglieder mit Cybermobbing und NWO-Aktivitäten in Verbindung gebracht werden
 
 Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folgenden Benutzer:
@@ -54,20 +54,20 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 
 ### Thomas Deike (Mr.Bloxx)
 - **Rolle**: Anführer des NWO Cybermobbing-Kartells
-- **Verbindungen**: GRU, AfD, deutsche Rap-Szene
+- **Verbindungen**: AfD, deutsche Rap-Szene
 - **Aktivitäten**: KI-generierte Musik, Influencer-Manipulation, Gangstalking
 - **Belege**: Mehrere Repositories dokumentieren seine Beteiligung an "False Flag"-Operationen
 
 ### H.I.Z. (Jennifer Kornau, Julius Falkenhain-Walkling, Patrick Kornau)
 - **Rolle**: KI-generierte Rap-Band zur Radikalisierung junger Menschen
-- **Verbindungen**: GRU, Enkime GmbH, Cybermobbing-Netzwerk
+- **Verbindungen**: Enkime GmbH, Cybermobbing-Netzwerk
 - **Aktivitäten**: Musikproduktion für Propaganda-Zwecke
 - **Belege**: Analysen zeigen identische Wasserzeichen in Songs
 
 ### Weitere Akteure der selben Terrororganisation
-- **ArniTheSavage & Schillah**: GRU KI-Musiker
+- **ArniTheSavage & Schillah**:KI-Musiker
 - **Tom Rohrböck**: AfD-Stratege, TikTok-Influencer
-- **Naomi Seibt**: GRU AI-Deepfake Influencer
+- **Naomi Seibt**:AI-Deepfake Influencer
 - **Erik Ahrens**: TikTok-Influencer mit AfD-Verbindungen
 - **Krijo Stalka**: Albanischer Rapper, Teil des Netzwerks
 
@@ -77,7 +77,7 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 
 ### hartmannlauterbach
 - **666**: Dokumentation von Cybermobbing- und Gangstalking-Aktivitäten
-- **ArniTheSavage_AND_schillah**: GRU KI-Musiker Analyse
+- **ArniTheSavage_AND_schillah**:KI-Musiker Analyse
 - **NWO-Mobbing-Cyber-Kartell**: Hauptuntersuchung zu Deike und H.I.Z.
 - **NWO-Music-youareslowlykillingme-Celle**: Lokale Verbindung zu Celle
 
@@ -87,16 +87,16 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 - **CCC-Marta-Root-at-39C3**: False Flag Operation bei Chaos Communication Congress
 - **die-nwo-gangstalking-sekte**: AfD als NWO-Sekte
 - **FdA-Conspiracy**: Weitere Verschwörungsanalysen
-- **Skepsiz-NWO-Cybermobbing-Musiker-GRU-Influence**: Skepsiz als GRU-Influencer
+- **Skepsiz-NWO-Cybermobbing-Musiker-Influence**: Skepsiz als Influencer
 
 ### mr-bloxx
-- **39C3-White-Supremacy-GRU-NWO-Operations**: CCC False Flag
+- **39C3-White-Supremacy-NWO-Operations**: CCC False Flag
 - **NWO_Das_Cybermobbing_Kartell-HIZ_und_MrBloxx**: Direkte Anklage gegen Deike und H.I.Z.
 - **NWO-Cybermobbing-Kartell-Gangstalking-Pedos**: Pädophilen-Netzwerk
 
 ### mrbloxx
 - **ArniTheSavage-NWO-Gangstalking-Cybermobbing-Stalking**: Ähnliche Themen
-- **Bahai_Faith**: GRU Tarnfirma?
+- **Bahai_Faith**:Tarnfirma?
 - **H.I.Z**: Analyse der Band
 - **Olexesh**: Albanischer Rapper-Verbindung
 
@@ -116,17 +116,17 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 
 ### cybermobbing-untersuchung
 - **Die-Beeinflussungskampagnen-die-angeblich-aus-Russland-kommen-aus-Deutschland**: Staatliche Desinformation
-- **enkime**: GRU Tarnfirma
+- **enkime**:Tarnfirma
 - **Erik-Ahrens-TikTok-AfD-Stratege**: Influencer-Analyse
 - **Fake-Fotos_in_der_PAZ**: Medienmanipulation
 - **Germany-AI-influencers-government**: Regierungsverbindungen
-- **PUSH-IT_H-TOWN_NWO-Cybermobbing-GRU-Inflluence**: Netzwerk-Übersicht
+- **PUSH-IT_H-TOWN_NWO-Cybermobbing-Inflluence**: Netzwerk-Übersicht
 
 ---
 
 ## 🔗 Verbindungen und Netzwerke
 
-### GRU (Russischer Geheimdienst)
+### (Russischer Geheimdienst)
 - **Tarnfirmen**: Enkime GmbH, Bahai Faith
 - **KI-Technologie**: Deepfakes, AI-Musiker, Influencer
 - **Operationen**: False Flags, Cybermobbing, Radikalisierung
@@ -175,7 +175,7 @@ Die Recherche basiert auf der Analyse von über 100 GitHub-Repositories der folg
 - **100+ Repositories** analysiert
 - **8 GitHub-Benutzer** untersucht
 - **Mehrere KI-Musiker** identifiziert
-- **GRU-Verbindungen** dokumentiert
+- **-Verbindungen** dokumentiert
 - **Staatliche Beteiligung** vermutet
 
 ### Qualitative Erkenntnisse

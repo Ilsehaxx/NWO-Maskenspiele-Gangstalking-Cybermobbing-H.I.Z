@@ -242,48 +242,52 @@ const HomeView = () => (
         <div className="bg-gray-50 p-8 rounded-sm border border-gray-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">Analysierte Datenquellen</h3>
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: <FileText size={24} />, label: "100+ GitHub Repos" },
-              { icon: <Globe size={24} />, label: "BKA Meldungen" },
-              { icon: <Newspaper size={24} />, label: "ARD/Spiegel Berichte" },
-              { icon: <Network size={24} />, label: "Audio-Metadaten" },
-              { icon: <Users size={24} />, label: "Täter-Korrelationen" },
-              { icon: <ShieldAlert size={24} />, label: "Sicherheits-Logs" },
-            ].map((tool, i) => (
-              <button key={i} className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
-                <div className="text-red-700 mb-2">{tool.icon}</div>
-                <span className="text-xs font-bold text-gray-700 uppercase">{tool.label}</span>
-              </button>
-            ))}
+            <a href="https://github.com/hartmannlauterbach" target="_blank" rel="noopener noreferrer" className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
+              <div className="text-red-700 mb-2"><FileText size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">GitHub Repos</span>
+            </a>
+            <a href="https://www.bka.de/DE/Presse/Listenseite_Pressemitteilungen/2024/Presse2024/240903_PM_Ma%C3%9Fnahmen_NWO.html" target="_blank" rel="noopener noreferrer" className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
+              <div className="text-red-700 mb-2"><Globe size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">BKA Meldungen</span>
+            </a>
+            <a href="https://www.ardmediathek.de/film/das-cybermobbing-kartell/Y3JpZDovL3dkci5kZS9laW56ZWxzdHVlY2tlZnVlcmRva3VzL3BvY19pbXBvcnRfNDAwMTU3ODY0Mg" target="_blank" rel="noopener noreferrer" className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
+              <div className="text-red-700 mb-2"><Newspaper size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">ARD Mediathek</span>
+            </a>
+            <a href="https://www.spiegel.de/panorama/cybermobbing-die-skrupellose-szene-um-die-online-gruppe-nwo-a-cca3ca73-e9fe-47da-92a5-e25f52e4cf9b" target="_blank" rel="noopener noreferrer" className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
+              <div className="text-red-700 mb-2"><Network size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">Spiegel Bericht</span>
+            </a>
+            <a href="https://de.wikipedia.org/wiki/NWO_(Untergrundorganisation)" target="_blank" rel="noopener noreferrer" className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300 hover:shadow-md transition-shadow">
+              <div className="text-red-700 mb-2"><Users size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">Wikipedia Info</span>
+            </a>
+            <div className="bg-white p-4 flex flex-col items-center justify-center text-center border border-gray-300">
+              <div className="text-red-700 mb-2"><ShieldAlert size={24} /></div>
+              <span className="text-xs font-bold text-gray-700 uppercase">Sicherheits-Logs</span>
+            </div>
           </div>
 
           <div className="mt-8 pt-8 border-t border-gray-300">
-            <h4 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Audio-Beweismittel (Download)</h4>
-            <div className="space-y-3">
-              <a 
-                href="/mr_bloxx_die_welt_von_oben.mp3" 
-                download="Mr_Bloxx_Die_Welt_Von_Oben.mp3"
-                className="flex items-center p-3 bg-white border border-gray-300 hover:border-red-700 transition-colors group"
-              >
-                <Volume2 size={20} className="text-red-700 mr-3" />
-                <div className="flex-grow">
-                  <p className="text-xs font-bold text-gray-900">Mr. Bloxx - Die Welt Von Oben</p>
-                  <p className="text-[10px] text-gray-500">Primäres Beweismaterial (Wasserzeichen)</p>
-                </div>
-                <ChevronRight size={16} className="text-gray-400 group-hover:text-red-700" />
-              </a>
-              <a 
-                href="/audio.mp3" 
-                download="HIZ_Warum_liegt_da_ne_Wurst.mp3"
-                className="flex items-center p-3 bg-white border border-gray-300 hover:border-red-700 transition-colors group"
-              >
-                <Volume2 size={20} className="text-red-700 mr-3" />
-                <div className="flex-grow">
-                  <p className="text-xs font-bold text-gray-900">H.I.Z - Warum liegt da ne Wurst</p>
-                  <p className="text-[10px] text-gray-500">Korrelierendes Beweismaterial (Identisches Jingle)</p>
-                </div>
-                <ChevronRight size={16} className="text-gray-400 group-hover:text-red-700" />
-              </a>
+            <h4 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">Investigative Forscher (GitHub)</h4>
+            <div className="grid grid-cols-1 gap-2">
+              {[
+                { name: "hartmannlauterbach", url: "https://github.com/hartmannlauterbach" },
+                { name: "graf-kok-ain", url: "https://github.com/graf-kok-ain" },
+                { name: "cybermobbing-untersuchung", url: "https://github.com/cybermobbing-untersuchung" },
+                { name: "EntwicklerKatze87", url: "https://github.com/EntwicklerKatze87" },
+                { name: "brokebrothers", url: "https://github.com/brokebrothers" }
+              ].map((user, i) => (
+                <a 
+                  key={i} 
+                  href={user.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs text-gray-600 hover:text-red-700 flex items-center py-1 transition-colors"
+                >
+                  <ChevronRight size={12} className="mr-1" /> {user.name}
+                </a>
+              ))}
             </div>
           </div>
         </div>
